@@ -1,0 +1,305 @@
+@import 'tailwindcss';
+
+/* Scan the component sources so the precompiled bundle (gofi-ui/styles)
+ * and the examples site contain every utility the library actually uses. */
+@source '../components';
+
+/* ============================================================================
+ * GOFI Design System — tokens as a Tailwind v4 theme
+ * Single source of values: knowledge/ui/design-tokens.md
+ *
+ * Strategy:
+ *  1. Primitives + static tokens (radius, shadow, type, motion) live in @theme.
+ *  2. SEMANTIC tokens that swap per theme live in :root / [data-theme=dark]
+ *     with short names (--action, --sf-card, ...).
+ *  3. @theme inline maps the Tailwind utilities (bg-action, text-ink, ...)
+ *     to these swappable tokens → swapping [data-theme] re-themes everything.
+ *
+ * Golden rule: in the UI ALWAYS use the token utility (bg-action, rounded-pill),
+ * NEVER an arbitrary literal (bg-[#1B72D8]).
+ * ========================================================================== */
+
+@theme {
+  /* — Typography ——————————————————————————————————————————————— */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --text-display: 2.25rem;        /* 36 */
+  --text-display--line-height: 2.75rem;   /* 44 */
+  --text-display--font-weight: 700;
+  --text-h1: 1.75rem;             /* 28 */
+  --text-h1--line-height: 2.25rem;        /* 36 */
+  --text-h1--font-weight: 700;
+  --text-h2: 1.375rem;            /* 22 */
+  --text-h2--line-height: 1.875rem;       /* 30 */
+  --text-h2--font-weight: 600;
+  --text-h3: 1.125rem;            /* 18 */
+  --text-h3--line-height: 1.625rem;       /* 26 */
+  --text-h3--font-weight: 600;
+  --text-body: 1rem;              /* 16 */
+  --text-body--line-height: 1.5rem;       /* 24 */
+  --text-body-sm: 0.875rem;       /* 14 */
+  --text-body-sm--line-height: 1.25rem;   /* 20 */
+  --text-caption: 0.75rem;        /* 12 */
+  --text-caption--line-height: 1rem;      /* 16 */
+  --text-caption--font-weight: 500;
+
+  /* — Color primitives (do NOT use directly in the UI) ——————————————————— */
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #dcedff;
+  --color-primary-200: #aad7ff;
+  --color-primary-300: #7fc0ff;
+  --color-primary-400: #54a8ff;
+  --color-primary-500: #2e90fa;
+  --color-primary-600: #1b72d8;
+  --color-primary-700: #1259ae;
+  --color-primary-800: #0e4585;
+  --color-primary-900: #0b2942;
+
+  --color-accent-100: #e0e3ff;
+  --color-accent-200: #c3c9ff;
+  --color-accent-500: #6172f3;
+  --color-accent-600: #444ce7;
+  --color-accent-700: #3538cd;
+  --color-accent-900: #2d31a6;
+
+  --color-green-200: #a6f4c5;
+  --color-green-500: #16b364;
+  --color-green-600: #099250;
+  --color-green-700: #087443;
+  --color-green-800: #05603a;
+  --color-green-900: #054f31;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f2f4f7;
+  --color-gray-200: #eaecf0;
+  --color-gray-300: #d0d5dd;
+  --color-gray-400: #98a2b3;
+  --color-gray-500: #667085;
+  --color-gray-600: #475467;
+  --color-gray-700: #344054;
+  --color-gray-800: #1d2939;
+  --color-gray-900: #0c111d;
+
+  /* — Radius (rounded geometry, faithful to NuDS) —————————————————— */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* — Elevation ————————————————————————————————————————————————— */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
+  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.12);
+
+  /* — Motion ——————————————————————————————————————————————————— */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ============================================================================
+ * Semantic tokens swappable per theme (short names, no --color- prefix)
+ * ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --sf-page: var(--color-gray-50);
+  --sf-card: #ffffff;
+  --sf-hover: var(--color-gray-100);
+  --sf-sunken: var(--color-gray-100);
+  --sf-border: var(--color-gray-200);
+
+  /* text */
+  --tx-ink: var(--color-gray-900);
+  --tx-ink-2: var(--color-gray-500);
+  --tx-on-brand: var(--color-primary-900);
+  --tx-on-secondary: #ffffff;
+
+  /* brand / action / accent */
+  --brand: var(--color-primary-200);
+  --action: var(--color-primary-600);
+  --action-hover: var(--color-primary-700);
+  --accent: var(--color-accent-500);
+  --accent-hover: var(--color-accent-600);
+  --focus: var(--color-primary-600);
+
+  /* status */
+  --success: #12b76a;
+  --success-bg: #ecfdf3;
+  --warning: #f79009;
+  --warning-bg: #fffaeb;
+  --danger: #f04438;
+  --danger-bg: #fef3f2;
+  --info: #2e90fa;
+  --info-bg: #eff8ff;
+
+  /* z-index */
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --sf-page: var(--color-gray-900);
+  --sf-card: #161b26;
+  --sf-hover: var(--color-gray-800);
+  --sf-sunken: var(--color-gray-900);
+  --sf-border: var(--color-gray-700);
+
+  --tx-ink: var(--color-gray-50);
+  --tx-ink-2: var(--color-gray-400);
+  /* --tx-on-brand and --brand remain (stable identity) */
+
+  --action: var(--color-primary-500);
+  --action-hover: var(--color-primary-600);
+  --focus: var(--color-primary-400);
+
+  --success-bg: #052e1c;
+  --warning-bg: #2e2200;
+  --danger-bg: #3a0d0a;
+  --info-bg: #06243f;
+}
+
+/* ============================================================================
+ * Configurable brand (live preview) — per-project brand color choice.
+ * Combines orthogonally with [data-theme]. Blue (#AAD7FF) is the DEFAULT.
+ * Accessible derivation: brand = light surface (navy/dark on-brand text);
+ * action = shade with ≥ 4.5:1 over white; in dark the action lightens one step.
+ * ========================================================================== */
+[data-brand='violet'] {
+  --brand: var(--color-accent-200); /* #C3C9FF */
+  --tx-on-brand: var(--color-accent-900); /* #2D31A6 */
+  --action: var(--color-accent-600); /* #444CE7 */
+  --action-hover: var(--color-accent-700);
+  --focus: var(--color-accent-600);
+}
+[data-theme='dark'][data-brand='violet'] {
+  --action: var(--color-accent-500);
+  --action-hover: var(--color-accent-600);
+  --focus: var(--color-accent-500);
+}
+
+[data-brand='green'] {
+  --brand: var(--color-green-200); /* #A6F4C5 */
+  --tx-on-brand: var(--color-green-900); /* #054F31 */
+  --action: var(--color-green-700); /* #087443 */
+  --action-hover: var(--color-green-800);
+  --focus: var(--color-green-700);
+}
+[data-theme='dark'][data-brand='green'] {
+  --action: var(--color-green-500);
+  --action-hover: var(--color-green-600);
+  --focus: var(--color-green-500);
+}
+
+/* ============================================================================
+ * Map: Tailwind utilities → swappable tokens (inline = live reference)
+ * ========================================================================== */
+@theme inline {
+  --color-page: var(--sf-page);
+  --color-card: var(--sf-card);
+  --color-hover: var(--sf-hover);
+  --color-sunken: var(--sf-sunken);
+  --color-border: var(--sf-border);
+
+  --color-ink: var(--tx-ink);
+  --color-ink-secondary: var(--tx-ink-2);
+  --color-on-brand: var(--tx-on-brand);
+  --color-on-secondary: var(--tx-on-secondary);
+
+  --color-brand: var(--brand);
+  --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-focus: var(--focus);
+
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+}
+
+/* ============================================================================
+ * Base — light reset, visible focus, reduced motion (a11y is default)
+ * ========================================================================== */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background-color: var(--color-page);
+    color: var(--color-ink);
+    font-size: var(--text-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, figure {
+    margin: 0;
+  }
+
+  /* keyboard-visible focus — never outline:none without an alternative */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* aligned numbers in tables/values */
+  table,
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Skeleton shimmer (respects reduced-motion above) */
+@keyframes gofi-shimmer {
+  100% { transform: translateX(100%); }
+}
+@keyframes gofi-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes gofi-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes gofi-scale-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes gofi-slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}

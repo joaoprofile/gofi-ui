@@ -1,0 +1,88 @@
+{
+  "name": "gofi-ui",
+  "version": "0.1.0",
+  "description": "GOFI UI Design System web - React + TypeScript + Tailwind",
+  "keywords": [
+    "react",
+    "design-system",
+    "ui",
+    "components",
+    "typescript",
+    "tailwind",
+    "tailwindcss",
+    "accessibility",
+    "a11y",
+    "component-library",
+    "gofi"
+  ],
+  "license": "MIT",
+  "author": "João Carvalho",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaoprofile/gofi-ui.git"
+  },
+  "homepage": "https://joaoprofile.github.io/gofi-ui/",
+  "bugs": {
+    "url": "https://github.com/joaoprofile/gofi-ui/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./charts": {
+      "types": "./dist/components/Charts/index.d.ts",
+      "import": "./dist/charts.js"
+    },
+    "./styles": "./dist/gofi-ui.css",
+    "./styles.css": "./dist/gofi-ui.css",
+    "./theme.css": "./src/styles/theme.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/styles/theme.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "npm --prefix examples run dev",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "tsc -p tsconfig.build.json --noEmit && vite build",
+    "build:css": "tailwindcss -i ./src/styles/theme.css -o ./dist/gofi-ui.css --minify",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit",
+    "examples:dev": "npm --prefix examples run dev",
+    "examples:build": "npm --prefix examples run build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.456.0",
+    "recharts": "^2.15.4",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.3.0"
+  }
+}
