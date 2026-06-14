@@ -1,7 +1,7 @@
 {
   "name": "gofi-ui",
-  "version": "0.1.0",
-  "description": "GOFI UI Design System web - React + TypeScript + Tailwind",
+  "version": "0.1.1",
+  "description": "GOFI Design System for React + TypeScript + Tailwind",
   "keywords": [
     "react",
     "design-system",

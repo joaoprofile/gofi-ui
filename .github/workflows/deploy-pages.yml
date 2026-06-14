@@ -28,6 +28,13 @@ jobs:
         with:
           node-version: 20
 
+      # The examples typecheck (`tsc`) follows imports into the library source
+      # at ../src, so the root dependencies (react, lucide-react, …) must be
+      # installed too — otherwise those modules don't resolve and the build fails.
+      - name: Install library (root) dependencies
+        working-directory: ${{ github.workspace }}
+        run: npm install
+
       - name: Install dependencies
         run: npm install
 
