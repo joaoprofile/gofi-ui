@@ -8,7 +8,7 @@ import { cn } from '@/lib/cn';
  * ============================================================ */
 
 export const badgeVariants = cva(
-  'inline-flex items-center justify-center gap-1 rounded-pill px-2 py-0.5 text-caption font-medium select-none',
+  'inline-flex items-center justify-center gap-1 rounded-badge px-2 py-0.5 text-caption font-medium select-none',
   {
     variants: {
       tone: {
@@ -57,7 +57,7 @@ export const NotificationBadge = forwardRef<HTMLSpanElement, NotificationBadgePr
       ref={ref}
       aria-label={label ?? `${count} notifications`}
       className={cn(
-        'inline-flex min-w-[1.25rem] items-center justify-center rounded-pill',
+        'inline-flex min-w-[1.25rem] items-center justify-center rounded-badge',
         'bg-action px-1.5 py-0.5 text-caption font-semibold text-on-secondary select-none',
         className,
       )}
@@ -88,7 +88,7 @@ export type TagProps = TagOwnProps &
 /** Category tag — neutral pill-style label; use `href` for the link version. */
 export const Tag = forwardRef<HTMLElement, TagProps>(({ href, children, className, ...rest }, ref) => {
   const base = cn(
-    'inline-flex items-center rounded-pill bg-hover px-2.5 py-0.5',
+    'inline-flex items-center rounded-chip bg-hover px-2.5 py-0.5',
     'text-caption font-medium text-ink-secondary select-none',
     href && 'cursor-pointer hover:bg-border transition-colors duration-100 ease-standard focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
     className,
@@ -141,7 +141,7 @@ export const Chip = forwardRef<HTMLButtonElement, ChipProps>(
     return (
       <span
         className={cn(
-          'inline-flex items-center gap-0.5 rounded-pill px-2.5 py-0.5',
+          'inline-flex items-center gap-0.5 rounded-chip px-2.5 py-0.5',
           'text-caption font-medium transition-colors duration-100 ease-standard',
           selected ? 'bg-action text-on-secondary' : 'bg-hover text-ink-secondary',
           disabled && 'pointer-events-none opacity-40',
@@ -155,7 +155,7 @@ export const Chip = forwardRef<HTMLButtonElement, ChipProps>(
           disabled={disabled}
           onClick={onClick}
           className={cn(
-            'cursor-pointer bg-transparent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus rounded-sm',
+            'cursor-pointer bg-transparent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus rounded-chip',
             className,
           )}
           {...rest}

@@ -55,7 +55,7 @@ export function SegmentedControl<T extends string | number>({
       role="tablist"
       aria-orientation="horizontal"
       className={cn(
-        'inline-flex gap-1 rounded-pill bg-hover p-1',
+        'inline-flex gap-1 rounded-control bg-hover p-1',
         className,
       )}
     >
@@ -80,7 +80,7 @@ export function SegmentedControl<T extends string | number>({
             onClick={() => onChange(option.value)}
             onKeyDown={(e) => handleKeyDown(e, index)}
             className={cn(
-              'inline-flex items-center gap-1.5 rounded-pill px-4 py-1.5 text-body-sm font-medium',
+              'inline-flex items-center gap-1.5 rounded-control px-4 py-1.5 text-body-sm font-medium',
               'transition-all duration-100 ease-standard',
               'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
               isSelected
@@ -93,7 +93,7 @@ export function SegmentedControl<T extends string | number>({
               <span
                 aria-hidden
                 className={cn(
-                  'rounded-pill px-1.5 py-0.5 text-caption font-semibold',
+                  'rounded-badge px-1.5 py-0.5 text-caption font-semibold',
                   isSelected
                     ? 'bg-action/10 text-action'
                     : 'bg-border text-ink-secondary',

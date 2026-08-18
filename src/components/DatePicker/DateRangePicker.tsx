@@ -139,10 +139,10 @@ export function DateRangePicker({
         onClick={() => !disabled && onToggle()}
         onKeyDown={onTriggerKeyDown}
         className={cn(
-          'flex h-11 w-full items-center gap-2 rounded-sm border bg-card px-3',
+          'flex h-[var(--h-field)] w-full items-center gap-2 rounded-field border bg-card px-[var(--px-field)]',
           'text-body transition-colors duration-100 ease-standard',
-          'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
-          isInvalid ? 'border-danger' : open ? 'border-action' : 'border-border',
+          'focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-focus',
+          isInvalid ? 'border-danger' : open ? 'border-focus' : 'border-border',
           disabled && 'cursor-not-allowed bg-hover opacity-70',
         )}
       >
@@ -157,7 +157,7 @@ export function DateRangePicker({
           role="dialog"
           aria-label={placeholder}
           className={cn(
-            'absolute left-0 top-full z-[var(--z-dropdown)] mt-1 flex rounded-md border border-border bg-card p-3 shadow-md',
+            'absolute left-0 top-full z-[var(--z-dropdown)] mt-1 flex rounded-overlay border border-border bg-card p-3 shadow-md',
             'animate-[gofi-scale-in_100ms_ease-standard_both]',
           )}
         >

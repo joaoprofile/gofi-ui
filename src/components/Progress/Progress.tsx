@@ -55,12 +55,12 @@ const LinearProgress = forwardRef<HTMLDivElement, InnerProgressProps>(
           aria-valuemin={0}
           aria-valuemax={isDeterminate ? max : undefined}
           aria-valuenow={isDeterminate ? value : undefined}
-          className="h-2 w-full overflow-hidden rounded-pill bg-hover"
+          className="h-2 w-full overflow-hidden rounded-track bg-hover"
         >
           {isDeterminate ? (
             <div
               className={cn(
-                'h-full rounded-pill transition-all duration-300 ease-standard',
+                'h-full rounded-track transition-all duration-300 ease-standard',
                 isComplete ? 'bg-success' : 'bg-action',
               )}
               style={{ width: `${pct}%` }}
@@ -69,7 +69,7 @@ const LinearProgress = forwardRef<HTMLDivElement, InnerProgressProps>(
             /* Indeterminate bar: back-and-forth animation */
             <div
               aria-hidden
-              className="h-full w-1/3 rounded-pill bg-action [animation:gofi-indeterminate_1.4s_ease-standard_infinite]"
+              className="h-full w-1/3 rounded-track bg-action [animation:gofi-indeterminate_1.4s_ease-standard_infinite]"
             />
           )}
         </div>

@@ -133,7 +133,7 @@ export function Table<T>({
   }
 
   return (
-    <div className={cn('w-full overflow-x-auto rounded-lg border border-border bg-card', className)}>
+    <div className={cn('w-full overflow-x-auto rounded-surface border border-border bg-card', className)}>
       <table
         className="w-full border-collapse text-body-sm"
         aria-busy={loading || undefined}
@@ -169,7 +169,7 @@ export function Table<T>({
                   aria-sort={col.sortable ? sortVal : undefined}
                   className={cn(
                     cellPad,
-                    'font-semibold text-ink-secondary whitespace-nowrap',
+                    'font-table-head text-ink-secondary whitespace-nowrap',
                     col.align === 'end' ? 'text-end' : 'text-start',
                   )}
                 >

@@ -64,6 +64,15 @@ const toneIconColor: Record<ToastTone, string> = {
 };
 
 export interface ToastProviderProps {
+  /**
+   * Portal target. Defaults to `document.body`.
+   *
+   * A theme is a set of custom properties on an element, so an overlay that
+   * portals to <body> escapes any `data-brand`/`data-theme` scoped to a
+   * subtree and renders unthemed. Pass the themed wrapper here to keep the
+   * overlay inside it.
+   */
+  container?: HTMLElement | null;
   children: ReactNode;
 }
 
@@ -71,7 +80,7 @@ export interface ToastProviderProps {
  * Provides `useToast()` and renders the toast stack (top-right corner,
  * max 3) in a portal on the <body>. Must wrap the application.
  */
-export function ToastProvider({ children }: ToastProviderProps) {
+export function ToastProvider({ container, children }: ToastProviderProps) {
   const [toasts, setToasts] = useState<ToastEntry[]>([]);
   const idRef = useRef(0);
 
@@ -103,7 +112,7 @@ export function ToastProvider({ children }: ToastProviderProps) {
             <ToastItem key={t.id} toast={t} onDismiss={() => dismiss(t.id)} />
           ))}
         </div>,
-        document.body,
+        container ?? document.body,
       )}
     </ToastContext.Provider>
   );
@@ -145,7 +154,7 @@ function ToastItem({ toast, onDismiss }: ToastItemProps) {
       role={isError ? 'alert' : 'status'}
       aria-live={isError ? 'assertive' : 'polite'}
       className={cn(
-        'pointer-events-auto flex items-start gap-3 rounded-md bg-card p-4 shadow-lg',
+        'pointer-events-auto flex items-start gap-3 rounded-overlay bg-card p-4 shadow-lg',
         'border border-border text-body-sm text-ink',
       )}
       style={{ animation: 'gofi-scale-in 200ms var(--ease-standard)' }}

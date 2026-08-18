@@ -22,10 +22,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div
         className={cn(
-          'flex h-11 items-center gap-2 rounded-sm border bg-card px-3',
+          'flex h-[var(--h-field)] items-center gap-2 rounded-field border bg-card px-[var(--px-field)]',
           'transition-colors duration-100 ease-standard',
-          'focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus',
-          isInvalid ? 'border-danger' : 'border-border focus-within:border-action',
+          'focus-within:outline-2 focus-within:outline-offset-0 focus-within:outline-focus',
+          isInvalid ? 'border-danger' : 'border-border focus-within:border-focus',
           disabled && 'cursor-not-allowed bg-hover opacity-70',
           className,
         )}

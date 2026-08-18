@@ -140,7 +140,7 @@ export function Menu({ trigger, items, align = 'start' }: MenuProps) {
           onKeyDown={onMenuKeyDown}
           className={cn(
             'absolute top-full z-[var(--z-dropdown)] mt-2 min-w-44 overflow-hidden',
-            'rounded-md border border-border bg-card py-1 shadow-md',
+            'rounded-overlay border border-border bg-card py-1 shadow-md',
             align === 'end' ? 'right-0' : 'left-0',
           )}
           style={{ animation: 'gofi-scale-in 150ms var(--ease-standard)' }}

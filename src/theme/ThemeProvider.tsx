@@ -9,8 +9,16 @@ import {
 } from 'react';
 
 export type ThemeMode = 'light' | 'dark';
-/** Configurable brand — live preview of alternative brand colors. */
-export type BrandMode = 'blue' | 'violet' | 'green';
+/**
+ * Configurable brand — live preview of alternative looks.
+ *
+ * `blue` | `violet` | `green` swap colour only. `salesforce` is a FULL skin of
+ * the Salesforce Lightning Design System: it also swaps geometry, density,
+ * type scale, elevation and easing. All four combine with `data-theme`.
+ */
+export type BrandMode = 'blue' | 'violet' | 'green' | 'salesforce';
+
+const BRANDS: readonly BrandMode[] = ['blue', 'violet', 'green', 'salesforce'];
 
 interface ThemeContextValue {
   theme: ThemeMode;
@@ -34,8 +42,8 @@ function getInitialTheme(): ThemeMode {
 
 function getInitialBrand(): BrandMode {
   if (typeof window === 'undefined') return 'blue';
-  const stored = window.localStorage.getItem(BRAND_KEY);
-  return stored === 'violet' || stored === 'green' ? stored : 'blue';
+  const stored = window.localStorage.getItem(BRAND_KEY) as BrandMode | null;
+  return stored && BRANDS.includes(stored) ? stored : 'blue';
 }
 
 export interface ThemeProviderProps {

@@ -139,7 +139,7 @@ export function Tabs({
     if (variant === 'underline') {
       return cn(
         base,
-        'rounded-t-sm border-b-2 -mb-px',
+        'rounded-t-overlay border-b-[length:var(--bw-tab)] -mb-px',
         active
           ? 'border-action text-action'
           : 'border-transparent text-ink-secondary hover:text-ink hover:border-border',
@@ -149,9 +149,9 @@ export function Tabs({
     if (variant === 'pill') {
       return cn(
         base,
-        'rounded-pill',
+        'rounded-control',
         active
-          ? 'bg-action text-white'
+          ? 'bg-action text-on-secondary'
           : 'text-ink-secondary hover:text-ink hover:bg-hover',
       );
     }
@@ -159,9 +159,9 @@ export function Tabs({
     /* vertical */
     return cn(
       base,
-      'w-full justify-start rounded-md',
+      'w-full justify-start rounded-control',
       active
-        ? 'bg-action text-white'
+        ? 'bg-action text-on-secondary'
         : 'text-ink-secondary hover:text-ink hover:bg-hover',
     );
   }
@@ -196,7 +196,7 @@ export function Tabs({
             {tab.badge !== undefined && (
               <span
                 aria-label={`${tab.badge} notifications`}
-                className="inline-flex min-w-[1.25rem] items-center justify-center rounded-pill bg-action px-1 text-caption text-white"
+                className="inline-flex min-w-[1.25rem] items-center justify-center rounded-badge bg-action px-1 text-caption text-on-secondary"
               >
                 {tab.badge}
               </span>

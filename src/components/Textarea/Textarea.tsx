@@ -69,10 +69,10 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div
         className={cn(
-          'flex min-h-24 rounded-sm border bg-card px-3 py-2',
+          'flex min-h-24 rounded-field border bg-card px-[var(--px-field)] py-2',
           'transition-colors duration-100 ease-standard',
-          'focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus',
-          isInvalid ? 'border-danger' : 'border-border focus-within:border-action',
+          'focus-within:outline-2 focus-within:outline-offset-0 focus-within:outline-focus',
+          isInvalid ? 'border-danger' : 'border-border focus-within:border-focus',
           disabled && 'cursor-not-allowed bg-hover opacity-70',
           className,
         )}

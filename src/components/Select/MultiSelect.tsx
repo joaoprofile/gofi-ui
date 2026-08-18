@@ -170,10 +170,10 @@ export function MultiSelect<T extends string | number>({
         onClick={handleOpen}
         onKeyDown={handleTriggerKeyDown}
         className={cn(
-          'flex min-h-11 w-full items-center justify-between gap-2 rounded-sm border bg-card px-2.5 py-1.5',
+          'flex min-h-[var(--h-field)] w-full items-center justify-between gap-2 rounded-field border bg-card px-2.5 py-1.5',
           'text-body transition-colors duration-100 ease-standard',
-          'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
-          isInvalid ? 'border-danger' : open ? 'border-action' : 'border-border',
+          'focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-focus',
+          isInvalid ? 'border-danger' : open ? 'border-focus' : 'border-border',
           disabled && 'cursor-not-allowed bg-hover opacity-70',
         )}
       >
@@ -184,7 +184,7 @@ export function MultiSelect<T extends string | number>({
           {visibleTags.map((opt) => (
             <span
               key={String(opt.value)}
-              className="inline-flex items-center gap-1 rounded-pill bg-action/10 py-0.5 pl-2.5 pr-1 text-caption font-medium text-action"
+              className="inline-flex items-center gap-1 rounded-chip bg-action/10 py-0.5 pl-2.5 pr-1 text-caption font-medium text-action"
             >
               {opt.label}
               <span
@@ -195,14 +195,14 @@ export function MultiSelect<T extends string | number>({
                   e.stopPropagation();
                   removeValue(opt.value);
                 }}
-                className="grid size-4 place-items-center rounded-pill hover:bg-action/20"
+                className="grid size-4 place-items-center rounded-chip hover:bg-action/20"
               >
                 <X className="size-3" />
               </span>
             </span>
           ))}
           {overflow > 0 && (
-            <span className="rounded-pill bg-hover px-2 py-0.5 text-caption font-medium text-ink-secondary">
+            <span className="rounded-chip bg-hover px-2 py-0.5 text-caption font-medium text-ink-secondary">
               +{overflow}
             </span>
           )}
@@ -225,7 +225,7 @@ export function MultiSelect<T extends string | number>({
           aria-multiselectable="true"
           onKeyDown={handleListKeyDown}
           className={cn(
-            'absolute left-0 right-0 top-full mt-1 overflow-hidden rounded-md border border-border bg-card shadow-md',
+            'absolute left-0 right-0 top-full mt-1 overflow-hidden rounded-overlay border border-border bg-card shadow-md',
             'z-[var(--z-dropdown)] animate-[gofi-scale-in_100ms_ease-standard_both]',
           )}
         >
@@ -286,8 +286,8 @@ export function MultiSelect<T extends string | number>({
                     <span
                       aria-hidden
                       className={cn(
-                        'grid size-4 shrink-0 place-items-center rounded-sm border',
-                        isSelected ? 'border-action bg-action text-white' : 'border-border',
+                        'grid size-4 shrink-0 place-items-center rounded-check border',
+                        isSelected ? 'border-action bg-action text-on-secondary' : 'border-border',
                       )}
                     >
                       {isSelected && <Check className="size-3" />}

@@ -4,7 +4,13 @@
  */
 
 // Theme
-export { ThemeProvider, useTheme, type ThemeMode, type ThemeProviderProps } from './theme/ThemeProvider';
+export {
+  ThemeProvider,
+  useTheme,
+  type ThemeMode,
+  type BrandMode,
+  type ThemeProviderProps,
+} from './theme/ThemeProvider';
 
 // Utilities
 export { cn } from './lib/cn';

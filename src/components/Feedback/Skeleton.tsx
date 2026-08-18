@@ -13,10 +13,10 @@ export interface SkeletonProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const radiusClasses = {
-  sm: 'rounded-sm',
-  md: 'rounded-md',
-  lg: 'rounded-lg',
-  pill: 'rounded-pill',
+  sm: 'rounded-field',
+  md: 'rounded-overlay',
+  lg: 'rounded-surface',
+  pill: 'rounded-track',
 } as const;
 
 /**

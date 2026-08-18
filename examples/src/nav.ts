@@ -83,6 +83,7 @@ export const NAV: NavGroup[] = [
       { id: 'financas', label: 'GOFI Finance - Personal' },
       { id: 'vendas', label: 'GOFI Sales - Dashboard' },
       { id: 'indicadores', label: 'GOFI Metrics - KPIs' },
+      { id: 'erp', label: 'GOFI ERP - Salesforce theme' },
       { id: 'app-shell', label: 'Student Portal' },
     ],
   },

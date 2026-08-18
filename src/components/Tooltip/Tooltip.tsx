@@ -101,7 +101,7 @@ export const Tooltip = forwardRef<HTMLSpanElement, TooltipProps>(
             'pointer-events-none absolute z-[var(--z-dropdown)] whitespace-nowrap',
             sideClasses[side],
             // Visual: dark sunken background, short text
-            'rounded-sm bg-sunken px-2.5 py-1 text-caption text-ink shadow-md',
+            'rounded-overlay bg-sunken px-2.5 py-1 text-caption text-ink shadow-md',
             // Visibility transition
             'transition-opacity duration-200 ease-standard',
             visible ? 'opacity-100' : 'opacity-0',

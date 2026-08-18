@@ -80,17 +80,114 @@
   --color-gray-800: #1d2939;
   --color-gray-900: #0c111d;
 
+  /* — Salesforce Lightning Design System palette ————————————————————
+   * Exact values from @salesforce-ux/design-system 2.264.0
+   * (design-tokens/dist/palettes.json). Used by [data-brand='salesforce'].
+   * In SLDS a HIGHER number is LIGHTER (inverse of the ramps above).
+   * ------------------------------------------------------------------ */
+  --color-slds-blue-10: #001639;
+  --color-slds-blue-15: #03234d;
+  --color-slds-blue-20: #032d60;
+  --color-slds-blue-30: #014486;
+  --color-slds-blue-40: #0b5cab;
+  --color-slds-blue-50: #0176d3;
+  --color-slds-blue-60: #1b96ff;
+  --color-slds-blue-65: #57a3fd;
+  --color-slds-blue-70: #78b0fd;
+  --color-slds-blue-80: #aacbff;
+  --color-slds-blue-90: #d8e6fe;
+  --color-slds-blue-95: #eef4ff;
+
+  --color-slds-neutral-10: #181818;
+  --color-slds-neutral-15: #242424;
+  --color-slds-neutral-20: #2e2e2e;
+  --color-slds-neutral-30: #444444;
+  --color-slds-neutral-40: #5c5c5c;
+  --color-slds-neutral-50: #747474;
+  --color-slds-neutral-60: #939393;
+  --color-slds-neutral-65: #a0a0a0;
+  --color-slds-neutral-70: #aeaeae;
+  --color-slds-neutral-80: #c9c9c9;
+  --color-slds-neutral-90: #e5e5e5;
+  --color-slds-neutral-95: #f3f3f3;
+  --color-slds-neutral-100: #ffffff;
+
+  --color-slds-green-20: #1c3326;
+  --color-slds-green-30: #194e31;
+  --color-slds-green-40: #396547;
+  --color-slds-green-50: #2e844a;
+  --color-slds-green-60: #3ba755;
+  --color-slds-green-70: #45c65a;
+  --color-slds-green-80: #91db8b;
+  --color-slds-green-90: #cdefc4;
+  --color-slds-green-95: #ebf7e6;
+
+  --color-slds-red-20: #640103;
+  --color-slds-red-30: #8e030f;
+  --color-slds-red-40: #ba0517;
+  --color-slds-red-50: #ea001e;
+  --color-slds-red-60: #fe5c4c;
+  --color-slds-red-70: #fe8f7d;
+  --color-slds-red-80: #feb8ab;
+  --color-slds-red-90: #fedad8;
+  --color-slds-red-95: #fef1ee;
+
+  --color-slds-orange-20: #3e2b02;
+  --color-slds-orange-30: #5f3e02;
+  --color-slds-orange-40: #825101;
+  --color-slds-orange-50: #a96404;
+  --color-slds-orange-60: #dd7a01;
+  --color-slds-orange-70: #fe9339;
+  --color-slds-orange-80: #ffba90;
+  --color-slds-orange-90: #fedfd0;
+  --color-slds-orange-95: #fff1ea;
+
+  --color-slds-yellow-40: #8c4b02;
+  --color-slds-yellow-70: #e4a201;
+  --color-slds-yellow-80: #fcc003;
+
+  /* Cloud blue — the pale canvas and tile blues of the Lightning screens. */
+  --color-slds-cloud-blue-30: #084968;
+  --color-slds-cloud-blue-50: #107cad;
+  --color-slds-cloud-blue-60: #0d9dda;
+  --color-slds-cloud-blue-70: #1ab9ff;
+  --color-slds-cloud-blue-90: #cfe9fe;
+  --color-slds-cloud-blue-95: #eaf5fe;
+
+  --color-slds-purple-40: #7526e3;
+  --color-slds-purple-50: #9050e9;
+  --color-slds-purple-90: #ece1f9;
+
+  --color-slds-pink-40: #b60554;
+  --color-slds-pink-50: #e3066a;
+  --color-slds-pink-90: #fdddE3;
+
+  --color-slds-teal-40: #056764;
+  --color-slds-teal-50: #0b827c;
+
+  /* — Lightning legacy semantics ——————————————————————————————————
+   * The hues in the reference screens (Lightning "blue" era): navy body
+   * text, blue-grey labels, cool borders, #0070D2 links. These are the
+   * classic SLDS v1 tokens ($colorTextDefault, $colorTextLabel, $colorBorder,
+   * $brandAccessible…), kept verbatim because they ARE the reference look.
+   * ------------------------------------------------------------------ */
+  --color-lx-ink: #16325c;         /* colorTextDefault */
+  --color-lx-ink-2: #54698d;       /* colorTextLabel / colorTextWeak */
+  --color-lx-border: #d8dde6;      /* colorBorder */
+  --color-lx-bg: #f4f6f9;          /* colorBackground */
+  --color-lx-link: #0070d2;        /* brandAccessible */
+  --color-lx-link-active: #005fb2; /* brandAccessibleActive */
+  --color-lx-brand: #1589ee;       /* brandPrimary — primary action */
+  --color-lx-header: #2ba5ff;      /* the bright app-bar blue of the screens */
+  --color-lx-success: #04844b;     /* colorTextSuccess */
+  --color-lx-danger: #c23934;      /* colorTextError */
+
   /* — Radius (rounded geometry, faithful to NuDS) —————————————————— */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-pill: 999px;
-
-  /* — Elevation ————————————————————————————————————————————————— */
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
-  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
-  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.12);
 
   /* — Motion ——————————————————————————————————————————————————— */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
@@ -133,6 +230,48 @@
   --info: #2e90fa;
   --info-bg: #eff8ff;
 
+  /* — SHAPE (semantic geometry) ————————————————————————————————————
+   * A theme re-skins the DS by swapping these, never by editing a component.
+   * Each token names a ROLE, not a value: two roles that share a value today
+   * can diverge in another theme (in SLDS `badge` stays a pill while
+   * `chip` becomes a 4px rectangle). Always use the role utility. */
+  --r-control: var(--radius-pill);  /* button, segmented item, pagination */
+  --r-field: var(--radius-sm);      /* input, select, textarea, date trigger */
+  --r-surface: var(--radius-lg);    /* card, modal, drawer, table wrapper */
+  --r-overlay: var(--radius-md);    /* menu, popover, tooltip, toast, banner */
+  --r-badge: var(--radius-pill);    /* status badge, counter */
+  --r-chip: var(--radius-pill);     /* tag, chip, multiselect token */
+  --r-track: var(--radius-pill);    /* progress bar, switch track */
+  --r-check: var(--radius-sm);      /* checkbox box */
+  --r-avatar: var(--radius-pill);   /* avatar, avatar group */
+
+  /* — DENSITY (control sizing) ————————————————————————————————————— */
+  --h-control-sm: 2rem;      /* 32 */
+  --h-control-md: 2.5rem;    /* 40 */
+  --h-control-lg: 3rem;      /* 48 */
+  --px-control-sm: 0.75rem;
+  --px-control-md: 1.25rem;
+  --px-control-lg: 1.5rem;
+
+  --h-field: 2.75rem;        /* 44 — inputs/selects/date triggers */
+  --px-field: 0.75rem;
+  --p-surface: 1.25rem;      /* card/modal padding */
+
+  /* — WEIGHT ————————————————————————————————————————————————————— */
+  --fw-control: 600;         /* button label */
+  --ls-heading: 0em;         /* letter-spacing for display/h1/h2 */
+  --ff-heading: var(--font-sans);  /* headings may use their own family */
+  --fw-table-head: 500;      /* table header cell */
+  --bw-tab: 2px;             /* active underline of the `underline` tabs */
+
+  /* — ELEVATION ——————————————————————————————————————————————————
+   * Kept here (not in @theme) because Tailwind INLINES @theme shadow values
+   * into --tw-shadow; only the `@theme inline` indirection below keeps them
+   * swappable per theme. */
+  --sh-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --sh-md: 0 4px 12px rgba(16, 24, 40, 0.08);
+  --sh-lg: 0 12px 32px rgba(16, 24, 40, 0.12);
+
   /* z-index */
   --z-base: 0;
   --z-sticky: 100;
@@ -168,6 +307,12 @@
 /* ============================================================================
  * Configurable brand (live preview) — per-project brand color choice.
  * Combines orthogonally with [data-theme]. Blue (#AAD7FF) is the DEFAULT.
+ *
+ * SCOPE: a brand is just a set of custom properties, so `data-brand` works on
+ * ANY element, not only <html> — put it on a wrapper and that subtree alone is
+ * re-skinned. The dark rules below are therefore written twice: as a compound
+ * selector (both attributes on <html>) and as a descendant one (dark at the
+ * root, brand on a nested wrapper).
  * Accessible derivation: brand = light surface (navy/dark on-brand text);
  * action = shade with ≥ 4.5:1 over white; in dark the action lightens one step.
  * ========================================================================== */
@@ -178,7 +323,8 @@
   --action-hover: var(--color-accent-700);
   --focus: var(--color-accent-600);
 }
-[data-theme='dark'][data-brand='violet'] {
+[data-theme='dark'][data-brand='violet'],
+[data-theme='dark'] [data-brand='violet'] {
   --action: var(--color-accent-500);
   --action-hover: var(--color-accent-600);
   --focus: var(--color-accent-500);
@@ -191,11 +337,208 @@
   --action-hover: var(--color-green-800);
   --focus: var(--color-green-700);
 }
-[data-theme='dark'][data-brand='green'] {
+[data-theme='dark'][data-brand='green'],
+[data-theme='dark'] [data-brand='green'] {
   --action: var(--color-green-500);
   --action-hover: var(--color-green-600);
   --focus: var(--color-green-500);
 }
+
+/* ============================================================================
+ * SALESFORCE — full skin of the Lightning Design System (SLDS)
+ *
+ * Unlike violet/green (colour only), this theme also swaps GEOMETRY,
+ * DENSITY, TYPE SCALE, ELEVATION and MOTION, because SLDS differs from the
+ * gofi default on all of them: 4px corners instead of pills, 32px controls
+ * instead of 44px, a 13px body instead of 16px, flat 2px shadows, linear
+ * easing. Every value below is copied from @salesforce-ux/design-system
+ * 2.264.0 — the source is named in the comment on each group.
+ * ========================================================================== */
+[data-brand='salesforce'] {
+  /* — Colour: the palette of the reference Lightning screens ————————
+   * Pale blue canvas, white cards, cool #D8DDE6 borders, navy body text,
+   * blue-grey labels and #0070D2 links. Surfaces come from the official
+   * cloud-blue ramp; text/border/link are the Lightning legacy tokens.
+   * ------------------------------------------------------------------ */
+  --sf-page: var(--color-slds-cloud-blue-95);  /* #eaf5fe — the blue canvas */
+  --sf-card: var(--color-slds-neutral-100);    /* #ffffff */
+  --sf-hover: var(--color-slds-cloud-blue-95); /* #eaf5fe — highlighted row */
+  --sf-sunken: var(--color-lx-bg);             /* #f4f6f9 */
+  --sf-border: var(--color-lx-border);         /* #d8dde6 */
+
+  --tx-ink: var(--color-lx-ink);               /* #16325c */
+  --tx-ink-2: var(--color-lx-ink-2);           /* #54698d */
+  --tx-on-brand: var(--color-lx-ink);          /* navy on the pale tile */
+  --tx-on-secondary: var(--color-slds-neutral-100);
+
+  --brand: var(--color-slds-cloud-blue-90);    /* #cfe9fe — app/object tile */
+
+  /* The primary blue of the reference screens — the "Brand action" button and
+   * the app bar. Lightened to blue-60, one step above `brandPrimary` (#1589EE)
+   * and as far as this can go: matching the screens was the explicit ask, and
+   * it costs contrast. White on #1B96FF is 3.06:1, and the same blue as link
+   * text on the card is 3.06:1 — they clear the 3:1 floor for large text and
+   * UI parts but sit under the 4.5:1 AA bar for body-size text. One step
+   * further (#2BA5FF, the `accent`) drops to 2.65:1 and breaks even that
+   * floor, which is why the bar blue is not reused here. Pointing this line at
+   * `--color-lx-link` (#0070D2) puts the theme back at AA. */
+  --action: var(--color-slds-blue-60);         /* #1b96ff */
+  --action-hover: var(--color-lx-link);        /* #0070d2 — darkens on hover */
+
+  /* `accent` is the brighter header/underline blue and is NEVER given a text
+   * label by a component: white on it is 2.65:1. */
+  --accent: var(--color-lx-header);            /* #2ba5ff */
+  --accent-hover: var(--color-lx-brand);
+
+  /* Focus keeps the darker blue so the ring stays visible on the pale canvas
+   * (6.0:1) — a focus indicator is the one thing that must never be subtle. */
+  --focus: var(--color-lx-link-active);        /* #005fb2 */
+
+  /* Status. The reference screens don't show status tints, so the tones are
+   * the Lightning text tokens and the tints are the lightest step that keeps
+   * each pair ≥ 4.5:1. `info` uses the deeper blue-40 because the #0070D2
+   * link blue cannot clear AA over any blue tint. */
+  --success: var(--color-lx-success);         /* #04844b */
+  --success-bg: #f5fbf2;
+  --warning: var(--color-slds-yellow-40);     /* #8c4b02 — colorTextWarningAlt */
+  --warning-bg: var(--color-slds-orange-95);  /* #fff1ea */
+  --danger: var(--color-lx-danger);           /* #c23934 */
+  --danger-bg: var(--color-slds-red-95);      /* #fef1ee */
+  --info: var(--color-slds-blue-40);          /* #0b5cab */
+  --info-bg: var(--color-slds-blue-95);       /* #eef4ff */
+
+  /* — Shape: radius.json + the component defaults in the compiled CSS ——
+   * radius-border-1 .125rem · radius-border-2 .25rem · pill 15rem      */
+  --r-control: 0.25rem;   /* .slds-button          radius-border 0.25rem */
+  --r-field: 0.25rem;     /* .slds-input/.slds-select/.slds-textarea    */
+  --r-surface: 0.25rem;   /* .slds-card / .slds-modal__content          */
+  --r-overlay: 0.25rem;   /* .slds-dropdown / .slds-popover / toast     */
+  --r-badge: 15rem;       /* .slds-badge stays a pill                   */
+  --r-chip: 0.25rem;      /* .slds-pill is a RECTANGLE in SLDS          */
+  --r-track: 15rem;       /* .slds-checkbox_toggle / progress bar       */
+  --r-check: 0.125rem;    /* .slds-checkbox_faux                        */
+  --r-avatar: 0.25rem;    /* --slds-s-avatar-radius-border              */
+
+  /* Primitives too, so any surface not yet on a role token still squares
+   * off with the theme instead of keeping the 8–24px gofi geometry. */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+
+  /* — Density: heightInput 1.875rem + 2×1px border = 2rem —————————— */
+  --h-control-sm: 1.75rem;   /* lineHeightButtonSmall 1.75rem */
+  --h-control-md: 2rem;      /* lineHeightButton 1.875rem + border */
+  --h-control-lg: 2.5rem;
+  --px-control-sm: 0.75rem;
+  --px-control-md: 1rem;     /* button spacing-inline 1rem */
+  --px-control-lg: 1rem;
+
+  --h-field: 2rem;
+  --px-field: 0.75rem;       /* input spacing-inline-start 0.75rem */
+  --p-surface: 1rem;         /* card header/body spacing-inline 1rem */
+
+  --fw-control: 400;         /* SLDS buttons are regular weight */
+  --ls-heading: -0.01em;     /* large Lightning headings are tracked in */
+  --fw-table-head: 700;      /* .slds-table thead th font-weight 700 */
+  --bw-tab: 3px;             /* .slds-tabs_default__item.slds-is-active */
+
+  /* — Type: font.json + ui-force fontSize tokens ————————————————————
+   * Salesforce Sans is licensed and not bundled; the fallback chain is
+   * the exact `$font-family` token from the SDK. */
+  --font-sans: 'Salesforce Sans', 'Roboto', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --ff-heading: var(--font-sans);
+
+  --text-display: 2rem;              /* fontSizeXxLarge */
+  --text-display--line-height: 2.5rem;
+  --text-display--font-weight: 500;
+  --text-h1: 1.75rem;                /* textHeadingXLarge */
+  --text-h1--line-height: 2.1875rem; /* lineHeightHeading 1.25 */
+  --text-h1--font-weight: 500;       /* Roboto Medium — see note above */
+  --text-h2: 1.25rem;                /* textHeadingMedium */
+  --text-h2--line-height: 1.5625rem;
+  --text-h2--font-weight: 500;
+  --text-h3: 1rem;                   /* .slds-card__header-title */
+  --text-h3--line-height: 1.25rem;
+  --text-h3--font-weight: 700;
+  --text-body: 0.8125rem;            /* fontSizeTextSmall — SLDS body */
+  --text-body--line-height: 1.21875rem;
+  --text-body-sm: 0.8125rem;
+  --text-body-sm--line-height: 1.21875rem;
+  --text-caption: 0.75rem;           /* form label / help / badge / tab */
+  --text-caption--line-height: 1.125rem;
+  --text-caption--font-weight: 400;
+
+  /* — Elevation ————————————————————————————————————————————————————
+   * The reference screens float white cards on the blue canvas with a soft,
+   * diffuse shadow rather than the tight `0 2px 2px` of the SLDS stylesheet.
+   * Tinted with the navy ink so the shade stays in the same colour family. */
+  --sh-sm: 0 1px 2px 0 rgba(22, 50, 92, 0.08);
+  --sh-md: 0 4px 12px 0 rgba(22, 50, 92, 0.12);
+  --sh-lg: 0 12px 32px 0 rgba(22, 50, 92, 0.18);
+
+  /* — Motion: SLDS transitions are `0.1s linear` everywhere ——————————— */
+  --ease-standard: linear;
+}
+
+/* SLDS ships no dark palette. This one keeps the Lightning identity by
+ * building on the official inverse surfaces (#032D60 / #001639) instead of a
+ * neutral grey, and lightens the action until it clears 4.5:1 — the same rule
+ * the blue/violet/green themes above follow. */
+[data-theme='dark'][data-brand='salesforce'],
+[data-theme='dark'] [data-brand='salesforce'] {
+  --sf-page: var(--color-slds-blue-10);       /* #001639 */
+  --sf-card: var(--color-slds-blue-15);       /* #03234d */
+  --sf-hover: var(--color-slds-blue-20);      /* #032d60 */
+  --sf-sunken: var(--color-slds-blue-10);
+  --sf-border: var(--color-lx-ink);           /* #16325c */
+
+  --tx-ink: var(--color-slds-cloud-blue-95);  /* #eaf5fe */
+  --tx-ink-2: var(--color-slds-blue-80);      /* #aacbff */
+
+  --brand: var(--color-slds-blue-20);         /* surface-inverse-1 #032d60 */
+  --tx-on-brand: var(--color-slds-cloud-blue-90);
+
+  /* On dark, the action has to read BOTH as text on the card and as a fill
+   * behind its own label. blue-65 clears 4.5:1 as text; the label on top
+   * flips to blue-20 (`--tx-on-secondary`) instead of white, which is what
+   * keeps the filled button legible — white on any blue light enough to be
+   * readable here would not be. */
+  --action: var(--color-slds-blue-65);        /* #57a3fd */
+  --action-hover: var(--color-slds-blue-70);  /* #78b0fd */
+  --tx-on-secondary: var(--color-slds-blue-10); /* #001639 */
+  --accent: var(--color-slds-blue-65);
+  --accent-hover: var(--color-slds-blue-70);
+  --focus: var(--color-slds-blue-65);
+
+  --success: var(--color-slds-green-70);
+  --success-bg: var(--color-slds-green-20);
+  --warning: var(--color-slds-orange-70);
+  --warning-bg: var(--color-slds-orange-20);
+  --danger: var(--color-slds-red-70);
+  --danger-bg: var(--color-slds-red-20);
+  --info: var(--color-slds-blue-70);
+  --info-bg: var(--color-slds-blue-20);
+}
+
+/* ============================================================================
+ * Salesforce — typographic traits that are theme, not component
+ *
+ * The reference screens show one Lightning habit the token layer can't
+ * express: column headers and tab labels are UPPERCASE and letter-spaced.
+ * It lives here, scoped to the theme and inside @layer components, so a
+ * utility on the element still wins. (The thicker active tab underline IS a
+ * token — `--bw-tab` — because it must not touch the pill/vertical variants.)
+ * ========================================================================== */
+@layer components {
+  [data-brand='salesforce'] :is(th, [role='tab']) {
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+  }
+}
+
 
 /* ============================================================================
  * Map: Tailwind utilities → swappable tokens (inline = live reference)
@@ -227,6 +570,30 @@
   --color-danger-bg: var(--danger-bg);
   --color-info: var(--info);
   --color-info-bg: var(--info-bg);
+
+  /* Shape roles → rounded-control, rounded-field, rounded-surface, … */
+  --radius-control: var(--r-control);
+  --radius-field: var(--r-field);
+  --radius-surface: var(--r-surface);
+  --radius-overlay: var(--r-overlay);
+  --radius-badge: var(--r-badge);
+  --radius-chip: var(--r-chip);
+  --radius-track: var(--r-track);
+  --radius-check: var(--r-check);
+  --radius-avatar: var(--r-avatar);
+
+  /* Family + tracking roles → font-heading, tracking-heading */
+  --font-heading: var(--ff-heading);
+  --tracking-heading: var(--ls-heading);
+
+  /* Weight roles → font-control, font-table-head */
+  --font-weight-control: var(--fw-control);
+  --font-weight-table-head: var(--fw-table-head);
+
+  /* Elevation → shadow-sm / shadow-md / shadow-lg, swappable per theme */
+  --shadow-sm: var(--sh-sm);
+  --shadow-md: var(--sh-md);
+  --shadow-lg: var(--sh-lg);
 }
 
 /* ============================================================================
@@ -257,6 +624,11 @@
 
   h1, h2, h3, h4, h5, h6, p, figure {
     margin: 0;
+  }
+
+  /* Headings follow their own family token, which defaults to the body font. */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-heading);
   }
 
   /* keyboard-visible focus — never outline:none without an alternative */

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/cn';
 
 export const cardVariants = cva(
-  'rounded-lg p-5 transition-shadow duration-150 ease-standard',
+  'rounded-surface p-[var(--p-surface)] transition-shadow duration-150 ease-standard',
   {
     variants: {
       variant: {
@@ -44,7 +44,9 @@ export const Card = forwardRef<HTMLElement, CardProps>(
         className={cn(cardVariants({ variant }), 'flex flex-col gap-4', className)}
         {...(rest as HTMLAttributes<HTMLElement>)}
       >
-        {media && <div className="-m-5 mb-0 overflow-hidden rounded-t-lg">{media}</div>}
+        {media && (
+          <div className="-m-[var(--p-surface)] mb-0 overflow-hidden rounded-t-surface">{media}</div>
+        )}
         {header && <div className="flex items-start justify-between gap-3">{header}</div>}
         <div className="flex flex-col gap-3">{children}</div>
         {footer && <div className="flex items-center gap-3 pt-1">{footer}</div>}

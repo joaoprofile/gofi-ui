@@ -59,10 +59,10 @@ export function Checkbox({
       <span
         aria-hidden
         className={cn(
-          'inline-flex size-5 shrink-0 items-center justify-center rounded-sm border-2 transition-colors duration-100 ease-standard',
+          'inline-flex size-5 shrink-0 items-center justify-center rounded-check border-2 transition-colors duration-100 ease-standard',
           'peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus',
           checked || indeterminate
-            ? 'border-action bg-action text-white'
+            ? 'border-action bg-action text-on-secondary'
             : 'border-border bg-card',
           invalid && !(checked || indeterminate) && 'border-danger',
         )}

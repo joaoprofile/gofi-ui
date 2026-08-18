@@ -92,7 +92,7 @@ export function Accordion({
   return (
     <div
       className={cn(
-        'flex flex-col divide-y divide-border rounded-md border border-border bg-card',
+        'flex flex-col divide-y divide-border rounded-surface border border-border bg-card',
         className,
       )}
     >
@@ -112,7 +112,7 @@ export function Accordion({
                   'text-body font-semibold text-ink',
                   'transition-colors duration-100 ease-standard hover:bg-hover',
                   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
-                  'first:rounded-t-md',
+                  'first:rounded-t-surface',
                 )}
                 onClick={() => toggle(item.id)}
               >

@@ -31,7 +31,7 @@ export function EmptyState({
 }: EmptyStateProps) {
   /* visual tone per variant */
   const iconWrapperClass = cn(
-    'flex size-16 items-center justify-center rounded-xl',
+    'flex size-16 items-center justify-center rounded-surface',
     variant === 'all-done' && 'bg-success-bg text-success',
     variant === 'no-results' && 'bg-sunken text-ink-secondary',
     variant === 'first-use' && 'bg-brand text-on-brand',

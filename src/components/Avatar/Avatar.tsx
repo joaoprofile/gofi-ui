@@ -82,7 +82,7 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
       <span
         ref={ref}
         aria-label={name}
-        className={cn('relative inline-flex shrink-0 items-center justify-center rounded-pill', sizeClasses[size], className)}
+        className={cn('relative inline-flex shrink-0 items-center justify-center rounded-avatar', sizeClasses[size], className)}
         {...rest}
       >
         {showImage ? (
@@ -90,12 +90,12 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
             src={src}
             alt={name}
             onError={() => setImgError(true)}
-            className="size-full rounded-pill object-cover"
+            className="size-full rounded-avatar object-cover"
           />
         ) : (
           <span
             aria-hidden
-            className={cn('flex size-full items-center justify-center rounded-pill font-semibold', colorClasses)}
+            className={cn('flex size-full items-center justify-center rounded-avatar font-semibold', colorClasses)}
           >
             {getInitials(name)}
           </span>
@@ -105,7 +105,7 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
           <span
             aria-label={status === 'online' ? 'Online' : 'Offline'}
             className={cn(
-              'absolute bottom-0 right-0 rounded-pill ring-2 ring-card',
+              'absolute bottom-0 right-0 rounded-full ring-2 ring-card',
               statusDotSize[size],
               status === 'online' ? 'bg-success' : 'bg-hover',
             )}
@@ -159,7 +159,7 @@ export const AvatarStack = forwardRef<HTMLSpanElement, AvatarStackProps>(
             aria-label={`${overflow} more`}
             className={cn(
               'relative -ml-2 inline-flex size-8 shrink-0 items-center justify-center',
-              'rounded-pill bg-hover text-caption font-semibold text-ink-secondary ring-2 ring-card',
+              'rounded-avatar bg-hover text-caption font-semibold text-ink-secondary ring-2 ring-card',
             )}
           >
             +{overflow}

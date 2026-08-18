@@ -33,7 +33,7 @@ function StepIcon({ state, number }: { state: StepState; number: number }) {
 
   if (state === 'completed') {
     return (
-      <span className={cn(base, 'bg-success text-white')}>
+      <span className={cn(base, 'bg-success text-on-secondary')}>
         {/* Icon + label hidden for screen readers */}
         <Check aria-hidden="true" className="size-4" />
         <span className="sr-only">Completed</span>
@@ -52,7 +52,7 @@ function StepIcon({ state, number }: { state: StepState; number: number }) {
 
   if (state === 'current') {
     return (
-      <span className={cn(base, 'bg-action text-white ring-2 ring-action ring-offset-2')}>
+      <span className={cn(base, 'bg-action text-on-secondary ring-2 ring-action ring-offset-2')}>
         {number}
         <span className="sr-only">Current</span>
       </span>

@@ -54,7 +54,7 @@ export function Banner({ tone, title, children, action, onDismiss }: BannerProps
   return (
     <div
       role={toneRole[tone]}
-      className={cn('flex items-start gap-3 rounded-md p-4 text-body-sm', bg)}
+      className={cn('flex items-start gap-3 rounded-overlay p-4 text-body-sm', bg)}
     >
       <Icon aria-hidden className={cn('mt-0.5 size-5 shrink-0', icon)} />
       <div className="min-w-0 flex-1">

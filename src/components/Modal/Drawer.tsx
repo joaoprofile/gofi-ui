@@ -16,6 +16,15 @@ export interface DrawerProps {
   size?: DrawerSize;
   footer?: ReactNode;
   dismissable?: boolean;
+  /**
+   * Portal target. Defaults to `document.body`.
+   *
+   * A theme is a set of custom properties on an element, so an overlay that
+   * portals to <body> escapes any `data-brand`/`data-theme` scoped to a
+   * subtree and renders unthemed. Pass the themed wrapper here to keep the
+   * overlay inside it.
+   */
+  container?: HTMLElement | null;
   children: ReactNode;
 }
 
@@ -26,9 +35,9 @@ const sideSizes: Record<DrawerSide, Record<DrawerSize, string>> = {
 };
 
 const sidePosition: Record<DrawerSide, string> = {
-  right: 'inset-y-0 right-0 h-full w-full rounded-l-lg',
-  left: 'inset-y-0 left-0 h-full w-full rounded-r-lg',
-  bottom: 'inset-x-0 bottom-0 w-full rounded-t-lg',
+  right: 'inset-y-0 right-0 h-full w-full rounded-l-surface',
+  left: 'inset-y-0 left-0 h-full w-full rounded-r-surface',
+  bottom: 'inset-x-0 bottom-0 w-full rounded-t-surface',
 };
 
 // Animations per side. `gofi-slide-in-right` exists in the theme; left/bottom use
@@ -42,7 +51,7 @@ const sideAnimation: Record<DrawerSide, string> = {
 
 /**
  * Side panel (or bottom sheet) with slide-in, focus trap, scroll lock and
- * focus return. Same a11y as the Modal. Portal on the <body>.
+ * focus return. Same a11y as the Modal. Portals to `container` (default <body>).
  */
 export function Drawer({
   open,
@@ -52,6 +61,7 @@ export function Drawer({
   size = 'md',
   footer,
   dismissable = true,
+  container,
   children,
 }: DrawerProps) {
   const titleId = useId();
@@ -110,7 +120,7 @@ export function Drawer({
         )}
       </div>
     </div>,
-    document.body,
+    container ?? document.body,
   );
 }
 

@@ -57,7 +57,7 @@ export function Popover({ trigger, children, align = 'start' }: PopoverProps) {
           tabIndex={-1}
           className={cn(
             'absolute top-full z-[var(--z-dropdown)] mt-2 min-w-56 outline-none',
-            'rounded-md border border-border bg-card p-4 text-body-sm text-ink shadow-md',
+            'rounded-overlay border border-border bg-card p-4 text-body-sm text-ink shadow-md',
             align === 'end' ? 'right-0' : 'left-0',
           )}
           style={{ animation: 'gofi-scale-in 150ms var(--ease-standard)' }}

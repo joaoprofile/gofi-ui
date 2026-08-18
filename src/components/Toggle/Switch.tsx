@@ -50,7 +50,7 @@ export function Switch({
       <span
         aria-hidden
         className={cn(
-          'relative inline-flex h-6 w-11 shrink-0 items-center rounded-pill',
+          'relative inline-flex h-6 w-11 shrink-0 items-center rounded-track',
           'transition-colors duration-200 ease-standard',
           'peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus',
           checked ? 'bg-action' : 'bg-border',
@@ -60,7 +60,7 @@ export function Switch({
         {/* Knob */}
         <span
           className={cn(
-            'absolute size-4 rounded-pill bg-white shadow-sm',
+            'absolute size-4 rounded-track bg-white shadow-sm',
             'transition-transform duration-200 ease-standard',
             checked ? 'translate-x-6' : 'translate-x-1',
           )}

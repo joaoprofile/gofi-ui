@@ -167,6 +167,7 @@ const BRAND_PREVIEW = [
   { id: 'blue' as const, label: 'Blue', swatch: '#aad7ff' },
   { id: 'violet' as const, label: 'Violet', swatch: '#c3c9ff' },
   { id: 'green' as const, label: 'Green', swatch: '#a6f4c5' },
+  { id: 'salesforce' as const, label: 'Salesforce', swatch: '#1b96ff' },
 ];
 
 export function TemaPage() {
@@ -226,6 +227,98 @@ export function TemaPage() {
           Each brand derives an accessible scale: the <strong>brand</strong> is the light surface
           (navy/dark text), the <strong>action</strong> is a shade with ≥ 4.5:1 on white. The rule
           doesn't change — only the values.
+        </Callout>
+      </DocSection>
+
+      <DocSection
+        title="Salesforce — a full skin, not just a color"
+        description="The Lightning look: pale blue canvas, white cards, navy text and #0070D2 links."
+      >
+        <Card>
+          <Inline justify="between">
+            <Stack gap={1}>
+              <CardTitle>
+                {brand === 'salesforce' ? 'Salesforce theme active' : 'Salesforce theme'}
+              </CardTitle>
+              <p className="text-body-sm text-ink-secondary">
+                Blue, violet and green swap color only. Salesforce also swaps geometry, density,
+                type scale, elevation and easing — everything on this page re-skins live.
+              </p>
+            </Stack>
+            <Button
+              variant={brand === 'salesforce' ? 'secondary' : 'primary'}
+              onClick={() => setBrand(brand === 'salesforce' ? 'blue' : 'salesforce')}
+            >
+              {brand === 'salesforce' ? 'Back to Blue' : 'Apply Salesforce'}
+            </Button>
+          </Inline>
+        </Card>
+
+        <Grid cols={4} gap={4}>
+          <Swatch bg="bg-action" name="--action" value="blue-60 #1B96FF" textClass="text-on-secondary" />
+          <Swatch bg="bg-action-hover" name="--action-hover" value="#0070D2 brandAccessible" textClass="text-on-secondary" />
+          <Swatch bg="bg-brand" name="--brand" value="cloud-blue-90 #CFE9FE" textClass="text-on-brand" />
+          <Swatch bg="bg-page" name="--sf-page" value="cloud-blue-95 #EAF5FE" textClass="text-ink" />
+        </Grid>
+
+        <Grid cols={4} gap={4}>
+          <Swatch bg="bg-card" name="--tx-ink" value="#16325C colorTextDefault" textClass="text-ink" />
+          <Swatch bg="bg-card" name="--tx-ink-2" value="#54698D colorTextLabel" textClass="text-ink-secondary" />
+          <Swatch bg="bg-sunken" name="--sf-sunken" value="#F4F6F9 colorBackground" textClass="text-ink" />
+          <Swatch bg="bg-card" name="--sf-border" value="#D8DDE6 colorBorder" textClass="text-ink-secondary" />
+        </Grid>
+
+        <Grid cols={4} gap={4}>
+          <Swatch bg="bg-success-bg" name="success" value="#04844B" textClass="text-success" />
+          <Swatch bg="bg-warning-bg" name="warning" value="#8C4B02" textClass="text-warning" />
+          <Swatch bg="bg-danger-bg" name="danger" value="#C23934" textClass="text-danger" />
+          <Swatch bg="bg-info-bg" name="info" value="#0B5CAB" textClass="text-info" />
+        </Grid>
+
+        <Prose>
+          <p>What the theme changes beyond color:</p>
+        </Prose>
+        <div className="rounded-surface border border-border bg-card px-4">
+          <TokenRow token="rounded-control" value="pill → 0.25rem" preview={<span className="text-caption text-ink-secondary">.slds-button</span>} />
+          <TokenRow token="rounded-field" value="8px → 0.25rem" preview={<span className="text-caption text-ink-secondary">.slds-input</span>} />
+          <TokenRow token="rounded-surface" value="16px → 0.25rem" preview={<span className="text-caption text-ink-secondary">.slds-card</span>} />
+          <TokenRow token="rounded-badge" value="pill → 15rem" preview={<span className="text-caption text-ink-secondary">.slds-badge stays a pill</span>} />
+          <TokenRow token="rounded-chip" value="pill → 0.25rem" preview={<span className="text-caption text-ink-secondary">.slds-pill is a rectangle</span>} />
+          <TokenRow token="--h-field" value="2.75rem → 2rem" preview={<span className="text-caption text-ink-secondary">heightInput 1.875rem + border</span>} />
+          <TokenRow token="--h-control-md" value="2.5rem → 2rem" preview={<span className="text-caption text-ink-secondary">lineHeightButton</span>} />
+          <TokenRow token="--bw-tab" value="2px → 3px" preview={<span className="text-caption text-ink-secondary">active tab underline</span>} />
+          <TokenRow token="text-body" value="16px → 13px" preview={<span className="text-caption text-ink-secondary">fontSizeTextSmall</span>} />
+          <TokenRow token="--ff-heading" value="Inter → Roboto" preview={<span className="text-caption text-ink-secondary">headings can use their own family</span>} />
+          <TokenRow token="text-h1 weight" value="700 → 500" preview={<span className="text-caption text-ink-secondary">Roboto Medium at 28px</span>} />
+          <TokenRow token="shadow-sm" value="soft → navy-tinted diffuse" preview={<span className="text-caption text-ink-secondary">cards float on the blue canvas</span>} />
+          <TokenRow token="ease-standard" value="cubic-bezier → linear" preview={<span className="text-caption text-ink-secondary">SLDS transitions are 0.1s linear</span>} />
+        </div>
+
+        <Callout tone="warning">
+          <strong>The primary blue is the one in the reference screens</strong>, not the darker
+          accessible one. That was the explicit brief, and it costs contrast: white on{' '}
+          <code>#1B96FF</code> and that same blue as link text both land at{' '}
+          <strong>3.06:1</strong> — over the 3:1 floor for large text and UI parts, under the 4.5:1
+          AA bar for body-size text. This is as light as the blue can go: one step further
+          (<code>#2BA5FF</code>, the <code>accent</code>) falls to 2.65:1 and breaks even that
+          floor. Pointing <code>--action</code> at <code>--color-lx-link</code>{' '}
+          (<code>#0070D2</code>) in <code>theme.css</code> puts the theme back at AA. Everything
+          else in the theme, focus ring included, already clears it.
+        </Callout>
+        <Callout tone="info">
+          Column headers and tab labels go <strong>uppercase and letter-spaced</strong> under this
+          theme — a Lightning habit the token layer can't express, so it ships as a rule scoped to{' '}
+          <code>[data-brand=&quot;salesforce&quot;]</code> inside <code>@layer components</code>.
+        </Callout>
+        <Callout tone="warning">
+          <strong>Salesforce Sans is licensed and not bundled.</strong> The theme declares it first
+          and falls back to the exact <code>$font-family</code> chain from the SDK, so it renders
+          correctly without the font and picks it up automatically where it is installed.
+        </Callout>
+        <Callout tone="info">
+          SLDS ships no dark palette. The dark variant is built on the official inverse surfaces
+          (<code>#032D60</code> / <code>#001639</code>) rather than a neutral grey, so it keeps the
+          Lightning identity, and lightens the action until every pair clears 4.5:1.
         </Callout>
       </DocSection>
 

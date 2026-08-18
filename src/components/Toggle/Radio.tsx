@@ -48,14 +48,14 @@ export function Radio({
       <span
         aria-hidden
         className={cn(
-          'inline-flex size-5 shrink-0 items-center justify-center rounded-pill border-2 transition-colors duration-100 ease-standard',
+          'inline-flex size-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-100 ease-standard',
           'peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus',
           checked ? 'border-action bg-card' : 'border-border bg-card',
           invalid && !checked && 'border-danger',
         )}
       >
         {checked && (
-          <span aria-hidden className="size-2.5 rounded-pill bg-action" />
+          <span aria-hidden className="size-2.5 rounded-full bg-action" />
         )}
       </span>
 

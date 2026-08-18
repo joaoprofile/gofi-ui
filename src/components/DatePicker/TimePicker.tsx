@@ -60,15 +60,15 @@ export function TimePicker({
   const emit = (nh: number | null, nm: number | null) => onChange(`${pad(nh ?? 0)}:${pad(nm ?? 0)}`);
 
   const selectClass =
-    'bg-transparent text-body tabular-nums text-ink outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus disabled:cursor-not-allowed';
+    'bg-transparent text-body tabular-nums text-ink outline-none disabled:cursor-not-allowed';
 
   return (
     <div
       className={cn(
-        'inline-flex h-11 items-center gap-1 rounded-sm border bg-card px-3',
+        'inline-flex h-[var(--h-field)] items-center gap-1 rounded-field border bg-card px-[var(--px-field)]',
         'transition-colors duration-100 ease-standard',
-        'focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus',
-        isInvalid ? 'border-danger' : 'border-border focus-within:border-action',
+        'focus-within:outline-2 focus-within:outline-offset-0 focus-within:outline-focus',
+        isInvalid ? 'border-danger' : 'border-border focus-within:border-focus',
         disabled && 'cursor-not-allowed bg-hover opacity-70',
         className,
       )}

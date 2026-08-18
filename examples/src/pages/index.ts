@@ -36,6 +36,7 @@ import { ChartsPage } from './ChartsPage';
 import { VendasPage } from './VendasPage';
 import { IndicadoresPage } from './IndicadoresPage';
 import { FinancasPage } from './FinancasPage';
+import { ErpPage } from './ErpPage';
 
 /** Route-id → page map. Keys match the ids in nav.ts. */
 export const pages: Record<string, ComponentType> = {
@@ -79,4 +80,5 @@ export const pages: Record<string, ComponentType> = {
   vendas: VendasPage,
   indicadores: IndicadoresPage,
   financas: FinancasPage,
+  erp: ErpPage,
 };

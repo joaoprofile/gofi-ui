@@ -272,7 +272,7 @@ export function Calendar(props: CalendarProps) {
                     onMouseEnter={() => isRange && setHovered(day)}
                     className={cn(
                       cellBase,
-                      selected && 'bg-action font-semibold text-white hover:bg-action-hover',
+                      selected && 'bg-action font-semibold text-on-secondary hover:bg-action-hover',
                       !selected && inRange && 'bg-action/15 rounded-none text-ink',
                       !selected && !inRange && !disabled && 'text-ink hover:bg-hover',
                       !selected && outside && 'text-ink-secondary/60',
@@ -313,7 +313,7 @@ export function Calendar(props: CalendarProps) {
                 className={cn(
                   'h-10 rounded-md text-body-sm capitalize transition-colors duration-100 ease-standard',
                   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
-                  monthSelected ? 'bg-action font-semibold text-white' : 'text-ink hover:bg-hover',
+                  monthSelected ? 'bg-action font-semibold text-on-secondary' : 'text-ink hover:bg-hover',
                   monthDisabled && 'cursor-not-allowed text-ink-secondary/40',
                 )}
               >
@@ -338,7 +338,7 @@ export function Calendar(props: CalendarProps) {
               className={cn(
                 'h-10 rounded-md text-body-sm tabular-nums transition-colors duration-100 ease-standard',
                 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
-                year === viewMonth.getFullYear() ? 'bg-action font-semibold text-white' : 'text-ink hover:bg-hover',
+                year === viewMonth.getFullYear() ? 'bg-action font-semibold text-on-secondary' : 'text-ink hover:bg-hover',
               )}
             >
               {year}

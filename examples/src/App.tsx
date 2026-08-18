@@ -13,9 +13,14 @@ const BRANDS: Array<{ id: BrandMode; label: string; swatch: string }> = [
   { id: 'blue', label: 'Blue (#AAD7FF)', swatch: '#aad7ff' },
   { id: 'violet', label: 'Violet', swatch: '#c3c9ff' },
   { id: 'green', label: 'Green', swatch: '#a6f4c5' },
+  {
+    id: 'salesforce',
+    label: 'Salesforce (Lightning Design System)',
+    swatch: '#1b96ff',
+  },
 ];
 
-/** Brand color selector — live preview in other colors. */
+/** Brand selector — live preview. `salesforce` re-skins the whole DS. */
 function BrandSwitcher() {
   const { brand, setBrand } = useTheme();
   return (

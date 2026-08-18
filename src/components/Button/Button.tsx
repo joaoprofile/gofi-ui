@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn';
  */
 export const buttonVariants = cva(
   [
-    'inline-flex items-center justify-center gap-2 rounded-pill font-semibold',
+    'inline-flex items-center justify-center gap-2 rounded-control font-control',
     'whitespace-nowrap select-none transition-colors duration-100 ease-standard',
     'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
     'disabled:pointer-events-none disabled:opacity-40',
@@ -17,17 +17,17 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-action text-white hover:bg-action-hover',
+        primary: 'bg-action text-on-secondary hover:bg-action-hover',
         secondary:
           'border border-action bg-transparent text-action hover:bg-action/10',
         ghost: 'bg-transparent text-ink hover:bg-hover',
-        danger: 'bg-danger text-white hover:opacity-90',
+        danger: 'bg-danger text-on-secondary hover:opacity-90',
         brand: 'bg-brand text-on-brand hover:brightness-95',
       },
       size: {
-        sm: 'h-8 px-3 text-body-sm',
-        md: 'h-10 px-5 text-body-sm',
-        lg: 'h-12 px-6 text-body',
+        sm: 'h-[var(--h-control-sm)] px-[var(--px-control-sm)] text-body-sm',
+        md: 'h-[var(--h-control-md)] px-[var(--px-control-md)] text-body-sm',
+        lg: 'h-[var(--h-control-lg)] px-[var(--px-control-lg)] text-body',
       },
       full: { true: 'w-full', false: '' },
     },

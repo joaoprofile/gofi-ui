@@ -75,17 +75,17 @@ export function Pagination({
 
   const pageButtonClass = (p: number) =>
     cn(
-      'inline-flex size-9 items-center justify-center rounded-full text-body-sm font-semibold',
+      'inline-flex size-9 items-center justify-center rounded-control text-body-sm font-control',
       'transition-colors duration-100 ease-standard tabular-nums',
       'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',
       p === page
-        ? 'bg-action text-white'
+        ? 'bg-action text-on-secondary'
         : 'text-ink hover:bg-hover',
     );
 
   const arrowClass = (enabled: boolean) =>
     cn(
-      'inline-flex size-9 shrink-0 items-center justify-center rounded-full',
+      'inline-flex size-9 shrink-0 items-center justify-center rounded-control',
       'bg-hover text-ink-secondary',
       'transition-colors duration-100 ease-standard',
       'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus',

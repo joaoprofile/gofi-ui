@@ -16,6 +16,15 @@ export interface ModalProps {
   footer?: ReactNode;
   /** Allows closing via Esc and backdrop click (default true). */
   dismissable?: boolean;
+  /**
+   * Portal target. Defaults to `document.body`.
+   *
+   * A theme is a set of custom properties on an element, so an overlay that
+   * portals to <body> escapes any `data-brand`/`data-theme` scoped to a
+   * subtree and renders unthemed. Pass the themed wrapper here to keep the
+   * overlay inside it.
+   */
+  container?: HTMLElement | null;
   children: ReactNode;
 }
 
@@ -36,6 +45,7 @@ export function Modal({
   size = 'md',
   footer,
   dismissable = true,
+  container,
   children,
 }: ModalProps) {
   const titleId = useId();
@@ -64,7 +74,7 @@ export function Modal({
         tabIndex={-1}
         className={cn(
           'relative z-[var(--z-modal)] flex w-full flex-col gap-4 outline-none',
-          'rounded-lg bg-card p-5 shadow-lg',
+          'rounded-surface bg-card p-[var(--p-surface)] shadow-lg',
           'max-h-[calc(100dvh-2rem)]',
           sizes[size],
         )}
@@ -92,6 +102,6 @@ export function Modal({
         )}
       </div>
     </div>,
-    document.body,
+    container ?? document.body,
   );
 }

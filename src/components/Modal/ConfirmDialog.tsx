@@ -13,6 +13,8 @@ export interface ConfirmDialogProps {
   cancelLabel?: string;
   tone?: ConfirmTone;
   onConfirm: () => void;
+  /** Portal target — see `ModalProps.container`. */
+  container?: HTMLElement | null;
   children: ReactNode;
 }
 
@@ -29,6 +31,7 @@ export function ConfirmDialog({
   cancelLabel = 'Cancel',
   tone = 'default',
   onConfirm,
+  container,
   children,
 }: ConfirmDialogProps) {
   const handleConfirm = () => {
@@ -43,6 +46,7 @@ export function ConfirmDialog({
       title={title}
       size="sm"
       dismissable={tone !== 'danger'}
+      container={container}
       footer={
         <>
           <Button variant="ghost" onClick={onClose}>
